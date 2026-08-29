@@ -31,8 +31,10 @@ const sections = {
       name: "Distributions",
       subsections: [
         { name: "Normal Distribution", path: "/probability/normal" },
+        { name: "Discrete Random Variables", path: "/probability/discrete" },
         { name: "Binomial Distribution", path: "/probability/binomial" },
         { name: "Poisson Distribution", path: "/probability/poisson" },
+        { name: "Counting Methods", path: "/probability/counting" },
         { name: "t Distribution", path: "/probability/t" },
         { name: "Chi-Square Distribution", path: "/probability/chi-square" },
         { name: "F Distribution", path: "/probability/f" },

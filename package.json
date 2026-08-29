@@ -1,19 +1,14 @@
 {
-  "name": "my-v0-project",
+  "name": "statlab",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build --force",
+    "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "build:worker": "cloudflare",
-    "dev:worker": "wrangler dev --port 8771",
-    "preview": "npm run pages:build && wrangler pages dev",
-    "deploy": "npm run pages:build && wrangler pages deploy"
+    "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/is-prop-valid": "latest",
     "@hookform/resolvers": "^3.9.1",
     "@radix-ui/react-accordion": "^1.2.2",
     "@radix-ui/react-alert-dialog": "^1.1.4",
@@ -53,15 +48,13 @@
     "input-otp": "1.4.1",
     "jstat": "latest",
     "lucide-react": "^0.454.0",
-    "next": "14.2.16",
+    "next": "14.2.35",
     "next-themes": "latest",
     "react": "^18",
-    "react-day-picker": "8.10.1",
     "react-dom": "^18",
     "react-hook-form": "^7.54.1",
     "react-resizable-panels": "^2.1.7",
     "recharts": "latest",
-    "socket.io-client": "latest",
     "sonner": "^1.7.1",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
@@ -69,7 +62,6 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
-    "@opennextjs/cloudflare": "^0.5.3",
     "@types/node": "^22",
     "@types/react": "^18",
     "@types/react-dom": "^18",

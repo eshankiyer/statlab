@@ -3,6 +3,7 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Header } from "@/components/header"
+import { withBasePath } from "@/lib/base-path"
 import type { ReactNode } from "react"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
   title: "StatLab Interactive",
   description: "A comprehensive web-based statistics platform for students and educators",
   icons: {
-    icon: '/logo.png', // /public path
+    icon: withBasePath("/logo.png"),
   },
 }
 

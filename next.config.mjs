@@ -1,12 +1,10 @@
-let userConfig = undefined
-try {
-  userConfig = await import('./v0-user-next.config')
-} catch (e) {
-  // ignore error
-}
+const basePath = "/statlab"
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "export",
+  basePath,
+  trailingSlash: true,
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -16,33 +14,12 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  experimental: {
-    webpackBuildWorker: true,
-    parallelServerBuildTraces: true,
-    parallelServerCompiles: true,
+  // next/image with unoptimized:true, and next/metadata icons, don't
+  // reliably prefix static /public asset URLs with basePath at export
+  // time, so components read this to build the path themselves.
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
   },
-}
-
-mergeConfig(nextConfig, userConfig)
-
-function mergeConfig(nextConfig, userConfig) {
-  if (!userConfig) {
-    return
-  }
-
-  for (const key in userConfig) {
-    if (
-      typeof nextConfig[key] === 'object' &&
-      !Array.isArray(nextConfig[key])
-    ) {
-      nextConfig[key] = {
-        ...nextConfig[key],
-        ...userConfig[key],
-      }
-    } else {
-      nextConfig[key] = userConfig[key]
-    }
-  }
 }
 
 export default nextConfig
